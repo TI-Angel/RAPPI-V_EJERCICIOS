@@ -89,23 +89,39 @@ if (nombre === miNombre || pase === "vip"){
 }
 
 // ---------- Ejercicio 8 ----------
-let numeroIncognita = 3;
-let numeroIntentos = 3;
-let numeroIngresado = parseInt(prompt("Ingrese un numero"));
-if (numeroIngresado > numeroIncognita){
-    alert("el numero ingreso es mayor, vuelve a intentarlo");
-    numeroIntentos--;
-    
-} else if ((numeroIngresado < numeroIncognita) && numeroIntentos>0){
-    alert("el numero ingreso es menor, vuelve a intentarlo");
-    numeroIntentos--;
-} else if ((numeroIngresado === numeroIncognita) && numeroIntentos>0){
-    alert("Ganaste, haz adivinado el numero");
-} else if(numeroIntentos == 0){
-    alert("Perdiste");
-} else{}
+let numeroIncognita = 4;
+let numeroIngresado1 = parseInt(prompt("Ingrese un numero"));
+if (numeroIngresado1 === numeroIncognita){
+    alert("GANASTE, haz adivinado el numero");
+} else if (numeroIngresado1 < numeroIncognita){
+    alert("el numero ingreso es menor, TE QUEDAN 2 INTENTOS");
+}   else if (numeroIngresado1 > numeroIncognita){
+    alert("el numero ingreso es mayor, TE QUEDAN 2 INTENTOS");
+}else {
+    alert("TE QUEDA 2 INTENTOS");
+}
 
+let numeroIngresado2 = parseInt(prompt("Ingrese un numero (segundo intento)"));
+if (numeroIngresado2 === numeroIncognita){
+    alert("GANASTE, haz adivinado el numero");
+} else if (numeroIngresado2 < numeroIncognita){
+    alert("el numero ingreso es menor, TE QUEDA 1 INTENTO");
+}   else if (numeroIngresado2 > numeroIncognita){
+    alert("el numero ingreso es mayor, TE QUEDA 1 INTENTO");
+} else{
+    alert("TE QUEDA UN INTENTO");
+}
 
+let numeroIngresado3 = parseInt(prompt("Ingrese un numero (ultimo intento)"));
+if (numeroIngresado3 === numeroIncognita){
+    alert("GANASTE, haz adivinado el numero");
+} else if (numeroIngresado3 < numeroIncognita){
+    alert("el numero ingreso es menor");
+}   else if (numeroIngresado3 > numeroIncognita){
+    alert("el numero ingreso es mayor");
+} else {}
+
+   
 // ---------- Ejercicio 9 ----------
 let edad = parseInt(prompt("Digite su edad"));
 if (edad >=0 && edad<= 12){
@@ -121,34 +137,89 @@ if (edad >=0 && edad<= 12){
 } else{}
 
 // ---------- Ejercicio 10 ----------
-let jugadaUno = prompt("'PIEDRA' 'PAPEL' o 'TIJERA'");
-let jugadaDos = prompt("'PIEDRA' 'PAPEL' o 'TIJERA'");
+let jugadorUno = prompt("Jugador1'PIEDRA' 'PAPEL' o 'TIJERA'");
+let jugadorDos = prompt("Jugador2'PIEDRA' 'PAPEL' o 'TIJERA'");
 
-let jugadorUno = jugadaUno.toLocaleLowerCase();
-let jugadorDos = jugadaDos.toLocaleLowerCase();
-
-if (jugadorUno == "piedra" && jugadorDos == "papel"){
-    alert("El jugador dos ha ganado");
-} else if(jugadorUno == "piedra" && jugadorDos == "tijera"){
-    alert("El jugador uno ha ganado");
-} else if (jugadorUno == "piedra" && jugadorDos == "piedra"){
-    alert("Ambos jugadores empataron");
-} else if(jugadorUno == "papel" && jugadorDos == "tijera"){
-    alert("El jugador dos ha ganado")
-} else if(jugadorUno == "papel" && jugadorDos == "piedra"){
-    alert("El jugador uno ha ganado")
-} else if(jugadorUno == "papel" && jugadorDos == "papel"){
-    alert("Ambos jugadores empataron");
-} else if(jugadorUno == "tijera" && jugadorDos == "tijera"){
-    alert("Ambos jugaores empataron");
-} else if(jugadorUno == "tijera" && jugadorDos == "piedra"){
-    alert("El jugador dos ha ganado");
-} else if (jugadorUno == "tijera" && jugadorDos == "papel"){ 
-    alert("El jugador uno ha ganado")
-} else{
-    alert("Uno de los mejoradores ha hecho trampa");
+if (jugadorUno === jugadorDos){
+    alert("EMPATE");
+} else if(jugadorUno === "piedra"){
+    if(jugadorDos === "tijera"){
+        alert("GANADOR jugador1");
+    } else if(jugadorDos === "papel"){
+        alert("GANADOR jugador2");
+    }  else {
+        alert("jugador2 esta haciendo trampa");
+    }
+} else if(jugadorUno === "papel"){
+    if(jugadorDos === "tijera"){
+        alert("GANADOR jugador2")
+    } else if(jugadorDos === "piedra"){
+        alert("GANADOR jugador 1");
+    }  else {
+        alert("jugador2 esta haciendo trampa");
+    }
+} else if(jugadorUno === "tijera"){
+    if(jugadorDos === "papel"){
+        alert("GANADOR jugador1")
+    } else if(jugadorDos === "piedra"){
+        alert("GANADOR jugador2");
+    }  else {
+        alert("jugador2 esta haciendo trampa");
+    }
+} else {
+    alert("El jugador1 esta haciendo trampa");
 }
 
+
+// ---------- Ejercicio 11 ----------
+let color = prompt("¿Ingrese el nombre de un color?");
+switch(color){
+    case "blanco":
+        alert("Falta de color");
+        break;
+    case "negro":
+        alert("Falta de color");
+        break;
+    case "verde":
+        alert("El color de la naturaleza");
+        break;
+    case "azul":
+        alert("El color del agua");
+        break;
+    case "amarillo":
+        alert("El color del sol");
+        break;
+    case "rojo":
+        alert("El color del fuego");
+        break;
+    case "marron":
+        alert("El color de la tierra");
+        break;
+    default:
+        alert("Excelente eleccion, no lo teniamos pensado.");
+        break;
+}
+
+// ---------- Ejercicio 12 ----------
+let valorUno = parseInt(prompt("Digite un valor"));
+let valorDos = parseInt(prompt("Digite otro valor"));
+let operacion = prompt("¿Que operacion desea realizar? +, -, *, /");
+
+if (operacion === "+"){
+    suma = valorUno + valorDos
+    alert(valorUno+" + "+valorDos+" ="+suma);
+} else if (operacion === "-"){
+    resta = valorUno - valorDos;
+    alert(valorUno+" - "+valorDos+" ="+resta);
+} else if (operacion === "*"){
+    multiplicacion = valorUno*valorDos;
+    alert(valorUno+" * "+valorDos+" ="+multiplicacion);
+} else if (operacion === "/" && valorDos != 0){
+    division = valorUno / valorDos;
+    alert(valorUno+" / "+valorDos+" ="+division);
+} else if (operacion === "/" && valorDos === 0){
+    alert("ERROR, no es posible dividir cuando el divisor es igual a 0");
+} else{}
 
 // ---------- Ejercicio 13 ----------
 
@@ -160,3 +231,20 @@ let lugarNacimiento = prompt("Ingrese el lugar de su nacimiento");
 
 alert("Datos ingresados: \n Nombre: "+nombre+"\n Apellido: "+apellido+"\n Identificacion: "+identidad+
     "\n Fecha de nacimiento: "+fechaNacimiento+"\n Lugar de nacimiento: "+lugarNacimiento);
+
+let confirmacion = confirm();
+
+if(confirmacion){
+    let dni = {
+        nombre: nombre,
+        apellido: apellido,
+        identidad: identidad,
+        fechaNacimiento: fechaNacimiento,
+        lugarNacimiento: lugarNacimiento
+    };
+
+    console.table(dni);
+    console.log("registro exitoso");
+} else {
+    alert("Vuelva a intentarlo en 1 mes");
+}
