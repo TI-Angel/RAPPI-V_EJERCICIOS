@@ -1,4 +1,4 @@
-let numeroUno = 5;
+/* let numeroUno = 5;
 let numeroDos = 7;
 let numeroTres = 9;
 
@@ -247,4 +247,4 @@ if(confirmacion){
     console.log("registro exitoso");
 } else {
     alert("Vuelva a intentarlo en 1 mes");
-}
+} */
